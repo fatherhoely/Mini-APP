@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 33, 33, 33;
+  --background-start-rgb: 255, 245, 157;
+  --background-end-rgb: 255, 255, 224;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 33, 33, 33;
+    --background-end-rgb: 44, 44, 44;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    );
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .input-field {
+    @apply rounded-lg border border-gray-400 p-2 dark:border-gray-600 dark:bg-gray-800;
+  }
+  .submit-button {
+    @apply rounded-lg bg-yellow-500 p-2 text-white hover:bg-yellow-600 dark:bg-yellow-700 dark:hover:bg-yellow-800;
+  }
+}
